@@ -16,6 +16,170 @@ extern unsigned char SmallFont[];
 //Функция сброса
 void(* resetFunc) (void) = 0;
 
+uint8_t RotatedNumbers[10][6]
+{
+  { 62, 81, 73, 69, 62, 0},
+  { 0, 1, 127, 33, 0, 0},
+  { 49, 73, 69, 67, 33, 0},
+  { 70, 105, 81, 65, 66, 0},
+  { 4, 127, 36, 20, 12, 0},
+  { 78, 81, 81, 81, 114, 0},
+  { 6, 73, 73, 41, 30, 0},
+  { 96, 80, 72, 71, 64, 0},
+  { 54, 73, 73, 73, 54, 0},
+  { 60, 74, 73, 73, 48, 0}
+};
+/*
+uint8_t RotatedNumbers[10][6][7]
+{
+  {
+    { 0, 1, 1, 1, 1, 1, 0},//62
+    { 1, 0, 1, 0, 0, 0, 1},//81
+    { 1, 0, 0, 1, 0, 0, 1},//73
+    { 1, 0, 0, 0, 1, 0, 1},//69
+    { 0, 1, 1, 1, 1, 1, 0},//62
+    { 0, 0, 0, 0, 0, 0, 0}//0
+  },
+
+  {
+    { 0, 0, 0, 0, 0, 0, 0},//0
+    { 0, 0, 0, 0, 0, 0, 1},//1
+    { 1, 1, 1, 1, 1, 1, 1},//127
+    { 0, 1, 0, 0, 0, 0, 1},//33
+    { 0, 0, 0, 0, 0, 0, 0},//0
+    { 0, 0, 0, 0, 0, 0, 0}//0
+  },
+
+  {
+    { 0, 1, 1, 0, 0, 0, 1},//49
+    { 1, 0, 0, 1, 0, 0, 1},//73
+    { 1, 0, 0, 0, 1, 0, 1},//69
+    { 1, 0, 0, 0, 0, 1, 1},//67
+    { 0, 1, 0, 0, 0, 0, 1},//33
+    { 0, 0, 0, 0, 0, 0, 0}//0
+  },
+
+  {
+    { 1, 0, 0, 0, 1, 1, 0},//70
+    { 1, 1, 0, 1, 0, 0, 1},//105
+    { 1, 0, 1, 0, 0, 0, 1},//81
+    { 1, 0, 0, 0, 0, 0, 1},//65
+    { 1, 0, 0, 0, 0, 1, 0},//66
+    { 0, 0, 0, 0, 0, 0, 0}//0
+  },
+
+  {
+    { 0, 0, 0, 0, 1, 0, 0},//4
+    { 1, 1, 1, 1, 1, 1, 1},//127
+    { 0, 1, 0, 0, 1, 0, 0},//36
+    { 0, 0, 1, 0, 1, 0, 0},//20
+    { 0, 0, 0, 1, 1, 0, 0},//12
+    { 0, 0, 0, 0, 0, 0, 0}//0
+  },
+
+  {
+    { 1, 0, 0, 1, 1, 1, 0},//78
+    { 1, 0, 1, 0, 0, 0, 1},//81
+    { 1, 0, 1, 0, 0, 0, 1},//81
+    { 1, 0, 1, 0, 0, 0, 1},//81
+    { 1, 1, 1, 0, 0, 1, 0},//114
+    { 0, 0, 0, 0, 0, 0, 0}//0
+  },
+
+  {
+    { 0, 0, 0, 0, 1, 1, 0},//6
+    { 1, 0, 0, 1, 0, 0, 1},//73
+    { 1, 0, 0, 1, 0, 0, 1},//73
+    { 0, 1, 0, 1, 0, 0, 1},//41
+    { 0, 0, 1, 1, 1, 1, 0},//30
+    { 0, 0, 0, 0, 0, 0, 0}//0
+  },
+
+  {
+    { 1, 1, 0, 0, 0, 0, 0},//96
+    { 1, 0, 1, 0, 0, 0, 0},//80
+    { 1, 0, 0, 1, 0, 0, 0},//72
+    { 1, 0, 0, 0, 1, 1, 1},//71
+    { 1, 0, 0, 0, 0, 0, 0},//64
+    { 0, 0, 0, 0, 0, 0, 0}//0
+  },
+
+  {
+    { 0, 1, 1, 0, 1, 1, 0},//54
+    { 1, 0, 0, 1, 0, 0, 1},//73
+    { 1, 0, 0, 1, 0, 0, 1},//73
+    { 1, 0, 0, 1, 0, 0, 1},//73
+    { 0, 1, 1, 0, 1, 1, 0},//54
+    { 0, 0, 0, 0, 0, 0, 0}//0
+  },
+
+  {
+    { 0, 1, 1, 1, 1, 0, 0},//60
+    { 1, 0, 0, 1, 0, 1, 0},//74
+    { 1, 0, 0, 1, 0, 0, 1},//73
+    { 1, 0, 0, 1, 0, 0, 1},//73
+    { 0, 1, 1, 0, 0, 0, 0},//48
+    { 0, 0, 0, 0, 0, 0, 0}//0
+  }
+};*/
+
+
+uint8_t R_score[6][6]
+{
+  {0, 0, 54, 54, 0, 0},
+  {12, 21, 21, 21, 14, 0},
+  {8, 16, 16, 8, 31, 0},
+  {14, 17, 17, 17, 14, 0},
+  {2, 17, 17, 17, 14, 0},
+  {70, 73, 73, 73, 49, 0}
+};
+/*
+uint8_t R_score[36][8]
+{
+    {0, 0, 0, 0, 0, 0, 0, 0},//0
+    {0, 0, 0, 0, 0, 0, 0, 0},//0
+    {0, 0, 1, 1, 0, 1, 1, 0},//54
+    {0, 0, 1, 1, 0, 1, 1, 0},//54
+    {0, 0, 0, 0, 0, 0, 0, 0},//0
+    {0, 0, 0, 0, 0, 0, 0, 0},//0
+
+    {0, 0, 0, 0, 1, 1, 0, 0},//12
+    {0, 0, 0, 1, 0, 1, 0, 1},//21
+    {0, 0, 0, 1, 0, 1, 0, 1},//21
+    {0, 0, 0, 1, 0, 1, 0, 1},//21
+    {0, 0, 0, 0, 1, 1, 1, 0},//14
+    {0, 0, 0, 0, 0, 0, 0, 0},//0
+
+    {0, 0, 0, 0, 1, 0, 0, 0},//8
+    {0, 0, 0, 1, 0, 0, 0, 0},//16
+    {0, 0, 0, 1, 0, 0, 0, 0},//16
+    {0, 0, 0, 0, 1, 0, 0, 0},//8
+    {0, 0, 0, 1, 1, 1, 1, 1},//31
+    {0, 0, 0, 0, 0, 0, 0, 0},//0
+
+    {0, 0, 0, 0, 1, 1, 1, 0},//14
+    {0, 0, 0, 1, 0, 0, 0, 1},//17
+    {0, 0, 0, 1, 0, 0, 0, 1},//17
+    {0, 0, 0, 1, 0, 0, 0, 1},//17
+    {0, 0, 0, 0, 1, 1, 1, 0},//14
+    {0, 0, 0, 0, 0, 0, 0, 0},//0
+
+    {0, 0, 0, 0, 0, 0, 1, 0},//2
+    {0, 0, 0, 1, 0, 0, 0, 1},//17
+    {0, 0, 0, 1, 0, 0, 0, 1},//17
+    {0, 0, 0, 1, 0, 0, 0, 1},//17
+    {0, 0, 0, 0, 1, 1, 1, 0},//14
+    {0, 0, 0, 0, 0, 0, 0, 0},//0
+
+    {0, 1, 0, 0, 0, 1, 1, 0},//70
+    {0, 1, 0, 0, 1, 0, 0, 1},//73
+    {0, 1, 0, 0, 1, 0, 0, 1},//73
+    {0, 1, 0, 0, 1, 0, 0, 1},//73
+    {0, 0, 1, 1, 0, 0, 0, 1},//49
+    {0, 0, 0, 0, 0, 0, 0, 0}//0
+};*/
+
+
 //Список всех блоков в тетрисе
 uint8_t BlocksList[7][4][4]
 {
@@ -139,7 +303,7 @@ class Tetris
               LCD.print("SETTINGS",17,21);
               LCD.print("EXIT",30,29);
               LCD.update();
-              if(digitalRead(BUTTON_E)==LOW||digitalRead(BUTTON_F)==LOW||digitalRead(BUTTON_G)==LOW)
+              if(digitalRead(BUTTON_E)==LOW||digitalRead(BUTTON_G)==LOW)
                 //Действия для кнопки START
                 if(_chosenOption == 0)
                 {
@@ -192,7 +356,7 @@ class Tetris
               LCD.print("CONTRAST",8,29);
               LCD.printNumI(contrast,70,29);
               LCD.update();
-              if(digitalRead(BUTTON_E)==LOW||digitalRead(BUTTON_F)==LOW||digitalRead(BUTTON_G)==LOW)
+              if(digitalRead(BUTTON_E)==LOW||digitalRead(BUTTON_G)==LOW)
                 if(_chosenOption == 0)
                 {
                   //Возвращаемся в изначальное меню
@@ -277,21 +441,30 @@ class Tetris
     }
     //Метод отрисовки поля с размером size
     //По идее, можно выбрать любой size, но при size > 2 поле не помещается на LCD5110
-    void Print(int i, int j)
+    void Print(uint8_t i, uint8_t j)
     {
       
-       for (int _i = 0; _i < size; ++_i)
-          for (int _j = 0; _j < size; ++_j)
+       if(size == 3)
+       {
+        
+        for (uint8_t _i = 0; _i < size; ++_i)
+          for (uint8_t _j = 0; _j < size; ++_j)
+              LCD.setPixel(size*i+_i,size*j+_j);
+       }
+       else {
+        for (uint8_t _i = 0; _i < size; ++_i)
+          for (uint8_t _j = 0; _j < size; ++_j)
               LCD.setPixel(size*j+_j,size*i+_i);
+       }
     }
     
     //Метод старта игры
     void StartGame()
     {
       //Заполняем матрицы поля, рисуем границы
-      for (int i = 0; i < 20; i++)
+      for (uint8_t i = 0; i < 20; ++i)
       {
-        for (int j = 0; j < 13; j++)
+        for (uint8_t j = 0; j < 13; ++j)
         {
           if ((j == 0) || (j == 12) || (i == 19))
           {
@@ -316,9 +489,9 @@ class Tetris
       LCD.clrScr();
 
       //Рисуем поле пикселями вместо цифр
-      for (int i = 0; i < 20; i++)
+      for (uint8_t i = 0; i < 20; ++i)
       {
-        for (int j = 0; j < 13; j++)
+        for (uint8_t j = 0; j < 13; ++j)
         {
           switch (field[i][j])
           {
@@ -339,8 +512,38 @@ class Tetris
       }
       
       //Выводим очки
-      LCD.print("Score:",13*size,size*2);
-      LCD.printNumI(score,13*size + 35,size*2);
+      if(size == 3)
+      {
+        for(int _i = 0; _i < 6; ++_i)
+          r_Print(5 - _i, 62, 40 - _i*6, false);
+          
+
+        int temp = score;
+        int del = 1;
+        uint8_t count = 1;
+        while(temp / 10 != 0)
+        {
+          temp /= 10;
+          count++;
+          del *= 10;
+        }
+        temp = score;
+
+        for(uint8_t _i = 0; _i < count; ++ _i)
+        {
+          
+          r_Print(temp / del, 70, 40 - _i*6, true);
+          
+          temp /= del ;
+          del /= 10;
+        }
+
+        LCD.update();
+      }
+      else {
+        LCD.print("Score:",13*size,size*2);
+        LCD.printNumI(score,13*size + 35,size*2);
+      }
 
       //При проигрыше, вызываем метод метод завершения игры
       if (gameover)
@@ -350,6 +553,47 @@ class Tetris
         GameOver();
       }
       LCD.update();
+    }
+    void r_Print(uint8_t num, uint8_t _x, uint8_t _y, bool cond)
+    {
+      
+      for(uint8_t _i = 0; _i < 7; ++_i)
+          for(uint8_t _j = 0; _j < 6; ++_j)
+            {
+              uint8_t** tmp = deCode(num, cond);
+              if(tmp[_j][_i] == 1)
+              LCD.setPixel(_x + _i,_y + _j);
+
+              for(int i = 0; i < 6; ++i)
+                delete tmp[i];
+              delete[] tmp;
+            }
+
+      
+    }
+
+    uint8_t** deCode(uint8_t num, bool cond)
+    {
+      uint8_t** tempMassive;
+      tempMassive = new uint8_t*[6];
+      for(int i = 0; i < 6; ++i)
+        tempMassive[i] = new uint8_t[7];
+        
+      for(int i = 0; i < 6; ++i)
+      {
+        uint8_t tmp;
+        if(cond)
+          tmp = RotatedNumbers[num][i];
+          else tmp = R_score[num][i];
+        for(int j = 0; j < 7; ++j)
+          {
+            tempMassive[i][6-j] = tmp % 2;
+              tmp /= 2;
+            
+          }
+      }
+
+          return tempMassive;
     }
 
     //Метод, вызывающийся при прогрыше
@@ -588,6 +832,12 @@ class Tetris
         f = !f;
           GetInput();
 
+        if(digitalRead(BUTTON_F)==LOW)
+          {
+            ShowMenu();
+            delay(1000);
+          }
+
         //Обновляем состояние игры
         if(f)
          GameFlow();
@@ -786,7 +1036,7 @@ class Tetris
       {
         RotateBlock();
       } 
-      else if (digitalRead(DOWN_pin)==LOW||(analogRead(ANALOG_Y_pin)< 493))
+      else if (digitalRead(DOWN_pin)==LOW||(analogRead(ANALOG_Y_pin)< 200))
       {
         if (!isColliding(x, y + 1))
         {
@@ -794,18 +1044,26 @@ class Tetris
         }
       } 
       
-      if (digitalRead(RIGHT_pin)==LOW||(analogRead(ANALOG_X_pin)> 400))
+      if (digitalRead(RIGHT_pin)==LOW||(analogRead(ANALOG_X_pin)> 553))
       {
-        if (!isColliding(x + 1, y))
+        if (!isColliding(x + 1, y) && size != 3)
         {
           MoveBlock(x + 1, y);
+        }
+        else if (!isColliding(x - 1, y))
+        {
+          MoveBlock(x - 1, y);
         }
       } 
       else if (digitalRead(LEFT_pin)==LOW||(analogRead(ANALOG_X_pin)< 320))
       {
-        if (!isColliding(x - 1, y))
+        if (!isColliding(x - 1, y) && size != 3)
         {
           MoveBlock(x - 1, y);
+        }
+        else if (!isColliding(x + 1, y))
+        {
+          MoveBlock(x + 1, y);
         }
       } 
     }
