@@ -164,7 +164,7 @@ class Tetris
         {
               LCD.print("START",27,5);
               LCD.print("RECORDS",20,13);
-              LCD.print("SETTINGS",17,21);
+              LCD.print("SETTINGS",18,21);
               LCD.print("EXIT",30,29);
               LCD.update();
               if(digitalRead(BUTTON_E)==LOW||digitalRead(BUTTON_G)==LOW)
